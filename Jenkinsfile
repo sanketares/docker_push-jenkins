@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_CREDENTIALS_I = 'docker-hub-credentials' // Jenkins credential ID for Docker Hub
+        DOCKER_CREDENTIALS_I = 'docker-hub' // Jenkins credential ID for Docker Hub
         DOCKER_IMAGE_NAME = 'sanket406/san-docker'
         DOCKER_REGISTRY = 'docker.io' // Docker Hub registry URL
         IMAGE_TAG = 'latest' // Tag for your Docker image
