@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_CREDENTIALS_ID = 'docker-hub-credentials' // Jenkins credential ID for Docker Hub
-        DOCKER_IMAGE_NAME = 'sanket-docker'
+        DOCKER_CREDENTIALS_I = 'docker-hub-credentials' // Jenkins credential ID for Docker Hub
+        DOCKER_IMAGE_NAME = 'sanket406/san-docker'
         DOCKER_REGISTRY = 'docker.io' // Docker Hub registry URL
         IMAGE_TAG = 'latest' // Tag for your Docker image
     }
@@ -26,7 +26,7 @@ pipeline {
         stage('Push Docker Image to Docker Hub') {
             steps {
                 script {
-                    docker.withRegistry("https://${DOCKER_REGISTRY}", "${DOCKER_CREDENTIALS_ID}") {
+                    docker.withRegistry("https://${DOCKER_REGISTRY}", "${DOCKER_CREDENTIALS_I}") {
                         docker.image("${DOCKER_IMAGE_NAME}:${IMAGE_TAG}").push("${IMAGE_TAG}")
                     }
                 }
